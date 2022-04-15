@@ -29,15 +29,14 @@
 		}
 		body::-webkit-scrollbar{
 			width: 0;
-			background: #fff;
+			/*background: #fff;*/
 		}
-		body::-webkit-scrollbar-thumb{
+		/*body::-webkit-scrollbar-thumb{
 			border-radius: 10px;
 			background: rgba(36, 41, 56,.3);
-		}
+		}*/
 		body {
 			background: #FFC81D;
-
 		}
 
 		button:focus {
@@ -199,16 +198,45 @@
 			top: 10px;
 		}
 
-		.sesgoabajo {
+		.diagonal-abajo {
 			background: #fff;
 			clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
 			height: 35vh;
 		}
+		.diagonal-arriba {
+			background: #fff;
+			clip-path: polygon(0 0, 0% 100%, 100% 0);
+			height: 35vh;
+		}
+/*.scroll_horizontal {
+	margin: auto;
+    width: 400px;
+    height: 300px;
+    overflow: auto;
+    display: flex;
+}*/
+.slider-automatico {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+@keyframes slide {
+  100% {
+    transform: translate3d(-1800px, 0, 0);
+  }
+}
+.slider-automatico img {
+  height: 400px;
+  min-width: 620px;
+  animation: slide 10s linear infinite;
+  animation-fill-mode:forwards;
+}
 	</style>
 </head>
 
 <body>
-	<nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top border-bottom border-light">
+	<nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top">
 		<div class="container-fluid mx-0 mx-md-5">
 			<div class="col-3">
 				<img src="Imagenes/logo.png" style="width: 40px">
@@ -264,10 +292,38 @@
 			</h3>
 		</div>
 	</div>
-	<div class="sesgoabajo">
+	<div class="diagonal-abajo">
+	</div>
+<div class="mundo row mx-0" style="background: #fff;border: 5px solid #fff;">
+		<div class="col-9 col-md-6 text-center" style="margin: auto;">
+			<img src="Imagenes/mundo.svg" style="width: 60%;">
+		</div>
+		<div class="col-md-6 d-flex justify-content-center align-items-center">
+			<h3 class="w-75 text-center p5-md-0 pt-4" style="margin: auto;">Nuestra intención es la de
+				prestar una ayuda extra a las protectoras además de facilitar la puesta en contacto
+				entre estas y las personas interesadas en adoptar.
+			</h3>
+		</div>
 	</div>
 
-
+	<div class="diagonal-arriba">
+	</div>
+	<div style="height: 100px;">
+	</div>
+	<div class="slider-automatico">
+  <img   src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img  src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img  src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img  src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img  src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+</div>
+<div style="height: 70vh;">
+	</div>
 	<footer class="container-fluid" style="background: #242938;">
 		<div style="height: 40vh;"></div>
 		<div class="row d-flex align-items-center px-5 border-top py-5 border-secondary">
@@ -284,7 +340,7 @@
 			<div class="col-md-4 text-center">
 				<a href="#1" class="texto-footer">Términos</a>
 				<div class="d-inline-block text-secondary">|</div>
-				<a href="#" class="texto-footer">Privacidad</a>
+				<a href="#1" class="texto-footer">Privacidad</a>
 			</div>
 			<div class="col-md-4 text-center">
 				<a href="#1" class="social d-inline-block float-right">
@@ -308,22 +364,44 @@
 				</a>
 			</div>
 		</div>
+		 
+
+<!-- <marquee behaviour="scroll" direction="right" class="scroll_horizontal">
+<img class="img-fluid" 
+      src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img class="img-fluid" 
+      src="https://images.unsplash.com/photo-1504713721722-f73b4ccdfe6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    />
+    <img  class="img-fluid" 
+      src="https://images.unsplash.com/photo-1532458198880-add09ce3b2f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+    />
+    <img class="img-fluid" 
+      src="https://images.unsplash.com/photo-1524767615-3d4139c938a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
+    />
+</marquee behaviour="scroll" direction="right"> -->
+
+
 		<div class="text-center" style="height: 6vh; font-size: 14px; font-weight: 400; color: #777;">© 2022 MastoPet</div>
 	</footer>
 	<script>
 		$(window).scroll(function () {
+			
 			if ($("#nav").offset().top > 400) {
+				// $(".scroll_horizontal").scrollLeft(600);
 				$('#nav').css('background', '#FFC81D');
+				$('#nav').css('box-shadow', 'none');
 			}
 			if ($("#nav").offset().top > 150) {
 				$("#nav").addClass("text-dark");
 			} else {
 				$("#nav").removeClass("text-dark");
 				$('#nav').css('background', '#fff');
+				$('#nav').css('box-shadow', '0 0 15px #ddd');
 			}
-
-		});
+		});		
 	</script>
+	
 </body>
 
 </html>
