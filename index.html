@@ -37,8 +37,8 @@
 		}*/
 		body {
 			/*background: #FFC81D;*/
-			background: #FCC052;
 			/*background: linear-gradient(to bottom right, #FBCD38, #FCBB5B);*/
+			background: #FCC052;
 		}
 
 		button:focus {
@@ -69,7 +69,8 @@
 			background-size: 0% 2px;
 			transition: background-size .7s;
 			cursor: pointer;
-			color: #242938;
+			/*color: #242938;*/
+			color: #fff;
 		}
 
 		.span:hover,
@@ -145,7 +146,7 @@
 			filter: invert(1);
 		}
 
-		.text-dark {
+		.nav {
 			z-index: 1 !important;
 			transition: all .3s ease;
 			color: #000;
@@ -153,12 +154,12 @@
 			/*background: #161616;*/
 		}
 
-		.text-dark img,
+		/*.text-dark img,
 		.text-dark lord-icon {
 			filter: invert(0);
-		}
+		}*/
 
-		.text-dark a:hover {
+		.nav a:hover {
 			color: rgba(0, 0, 0, .4) !important;
 		}
 
@@ -175,7 +176,7 @@
 		#linea2 {
 			position: absolute;
 			content: '';
-			background: #353535;
+			background: #eff;
 			width: 20px;
 			height: 4px;
 			border-radius: 5px;
@@ -233,15 +234,16 @@
   min-width: 620px;
   animation: slide 10s linear infinite;
   animation-fill-mode:forwards;
+
 }
 	</style>
 </head>
 
 <body>
-	<nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top">
+	<nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top">
 		<div class="container-fluid mx-0 mx-md-5">
 			<div class="col-3">
-				<img src="Imagenes/logo.png" style="width: 40px">
+				<img src="Imagenes/logo_blanco.png" style="width: 40px">
 			</div>
 			<div class="col-6 col-md-5 text-center">
 				<span class="fw-bold span">MastoPet</span>
@@ -269,7 +271,7 @@
 						<a class="nav-link disabled" href="#1" tabindex="-1" aria-disabled="true">Disabled</a>
 					</li>
 				</ul>
-				<span class="btn m-0 p-0">
+				<span class="btn m-0 p-0" style="filter: invert(1);"> 
 					<script src="https://cdn.lordicon.com/lusqsztk.js"></script>
 					<lord-icon src="https://cdn.lordicon.com/dklbhvrt.json" trigger="loop" delay="4000"
 						style="width:45px;height:45px">
@@ -278,10 +280,10 @@
 			</div>
 		</div>
 	</nav>
-	<div class="d-flex justify-content-center align-items-center"
-		style="width: 100%; height: 100vh; position: relative; background: #fff; z-index: 10;">
-		<h1 class="container text-center">Cuando necesité una <span style="color: #f5c029">mano</span>,<br /> encontré
-			una <span style="color: #f5c029">pata</span><img src="Imagenes/patas.png" class="btn" style="width: 80px;"></h1>
+	<div class="d-flex justify-content-center"
+		style="width: 100%; height: 100vh; position: relative; background: url(Imagenes/fondo.jpg); background-size: cover; background-position: center; z-index: 10;">
+		<!-- <h1 class="container text-center pt-5">Cuando necesité una <span style="color: #FCC052">mano</span>,<br /> encontré
+			una <span style="color: #FCC052">pata</span><img src="Imagenes/patas.png" class="btn" style="width: 80px;"></h1> -->
 	</div>
 	<div class="mundo row mx-0" style="padding-top: 130px;">
 		<div class="col-9 col-md-6 text-center" style="margin: auto;">
@@ -392,14 +394,14 @@
 			if ($("#nav").offset().top > 400) {
 				// $(".scroll_horizontal").scrollLeft(600);
 				$('#nav').css('background', '#FCC052');
-				$('#nav').css('box-shadow', 'none');
+				// $('#nav').css('box-shadow', 'none');
 			}
 			if ($("#nav").offset().top > 5) {
 				$("#nav").addClass("text-dark");
 			} else {
 				$("#nav").removeClass("text-dark");
-				$('#nav').css('background', '#fff');
-				$('#nav').css('box-shadow', '0 0 15px #ddd');
+				$('#nav').css('background', 'transparent');
+				// $('#nav').css('box-shadow', '0 0 15px #ddd');
 			}
 		});	
 
