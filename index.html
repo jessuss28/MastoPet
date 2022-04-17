@@ -201,12 +201,12 @@
 		.diagonal-abajo {
 			background: #fff;
 			clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
-			height: 520px;
+			/*height: 520px;*/
 		}
 		.diagonal-arriba {
 			background: #fff;
 			clip-path: polygon(0 0, 0% 100%, 100% 0);
-			height: 520px;
+			/*height: 520px;*/
 		}
 /*.scroll_horizontal {
 	margin: auto;
@@ -401,15 +401,23 @@
 			}
 		});	
 
-		$(window).resize(function(){
+		$(window).on('resize', function(){
 
-       if ($(window).width() <= 420) {  
+       if ($(window).width() <= 320) {  
        		 $('.diagonal-abajo').css('height', '60px');
        		  $('.diagonal-arriba').css('height', '60px');
        }
-       else if ($(window).width() > 420) {  
+       else if ($(window).width() > 320 && $(window).width() <= 576 ) {  
+       		 $('.diagonal-abajo').css('height', '100px');
+       		  $('.diagonal-arriba').css('height', '100px');
+       }
+       else if ($(window).width() > 576 && $(window).width() <= 768 ) {  
        		 $('.diagonal-abajo').css('height', '120px');
        		  $('.diagonal-arriba').css('height', '120px');
+       }
+       else if ($(window).width() > 768 ) {  
+       		 $('.diagonal-abajo').css('height', '150px');
+       		  $('.diagonal-arriba').css('height', '150px');
        }
        // else if ($(window).width() > 420){
        // 	$('.diagonal-abajo').css('height', '120px');
@@ -419,7 +427,7 @@
        // 		 $('.diagonal-abajo').css('height', '100px');
        // 		  $('.diagonal-arriba').css('height', '100px');
        // } 
-		});
+		}).trigger('resize');
 	</script>
 	
 </body>
