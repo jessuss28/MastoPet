@@ -36,7 +36,8 @@
 			background: rgba(36, 41, 56,.3);
 		}*/
 		body {
-			background: #FFC81D;
+			/*background: #FFC81D;*/
+			background: linear-gradient(to bottom right, #FBCD38, #FCBB5B);
 		}
 
 		button:focus {
@@ -389,10 +390,10 @@
 			
 			if ($("#nav").offset().top > 400) {
 				// $(".scroll_horizontal").scrollLeft(600);
-				$('#nav').css('background', '#FFC81D');
+				$('#nav').css('background', '#FCC052');
 				$('#nav').css('box-shadow', 'none');
 			}
-			if ($("#nav").offset().top > 150) {
+			if ($("#nav").offset().top > 5) {
 				$("#nav").addClass("text-dark");
 			} else {
 				$("#nav").removeClass("text-dark");
