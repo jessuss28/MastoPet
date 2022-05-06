@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MastoPet</title>
+  <link rel="shortcut icon" href="Imagenes/logo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 100vh;
+      width: 100%;
+      background-image: url(Imagenes/inicioSesion.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .input{
+      padding: 0.5em 1em 0.5em 2.5em;
+      border: 0;
+      border-radius: 0.25em;
+      font-size: inherit;
+      width: 100%;
+    }
+    .button-eye{
+      right: 0;
+      background-color: transparent;
+      border: 0;
+      transition: background-color 0.5s;,
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 5em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+.foco:focus {
+  outline: none;
+  box-shadow: none;
+}
+.foco::placeholder { color: #eee; font-size: 1em;}
+.form-check-input:checked {
+    background-color: #aaa;
+    border-color: #aaa;
+}
+  </style>
+</head>
+<body>
+<div style="background: rgba(20, 20, 20,.7); width: 450px;  position: relative; top: 50%; left: 50%; transform: translate(-50%,-50%);  color: #eee; padding: 45px 40px 85px 40px;" class="formu">
+  <h3 class="mb-4">Iniciar Sesión</h3>
+ <p class="d-none d-sm-block">Bienvenido a MastoPet, por favor inicie sesión para continuar: </p>
+    <input type="text" name="usuario" placeholder="Usuario:" class="ancho mx-auto foco form-control bg-transparent border-bottom border-0 rounded-0 text-white" style="margin: 0;">
+        <div class="input-group my-3 mx-auto ancho">
+      <input id="txtPassword" placeholder="Contraseña:" type="Password" class="foco form-control bg-transparent border-bottom border-0 rounded-0 text-white">
+            <button id="show_password " class="foco bg-transparent border-bottom border-0 rounded-0" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon" style="color: #eee;"></span> </button>
+    </div>
+<div class="form-check mb-5 mx-auto ancho">
+  <input class="foco form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Recuerdame
+  </label>
+</div>
+<div style="width: 85%; margin: auto;">
+  <button class="boton" style="border: 0; width: 100%; border-radius: 45px; padding: 8px 5px;">Iniciar Sesión</button>
+</div>
+<div class="text-center m-3">
+  <span>¿Aún no estás 
+<a href="registro.php" class="text-white">registrado</a>?</span>
+</div>
+</div>
+<script type="text/javascript">
+function mostrarPassword(){
+    var cambio = document.getElementById("txtPassword");
+    if(cambio.type == "password"){
+      cambio.type = "text";
+      $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    }else{
+      cambio.type = "password";
+      $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    }
+  } 
+  
+  $(document).ready(function () {
+  //CheckBox mostrar contraseña
+  $('#ShowPassword').click(function () {
+    $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+  });
+});
+
+  $(window).on('resize', function () {
+
+      if ($(window).width() <= 320) {
+        $('.formu').css('width', '80vw');
+      }
+      else if ($(window).width() > 320 && $(window).width() <= 576) {
+        $('.formu').css('width', '70vw');
+      }
+      else if ($(window).width() > 576 && $(window).width() <= 768) {
+        $('.formu').css('width', '60vw');
+         $('.ancho').css('width', '80%');
+      }
+      else if ($(window).width() > 768) {
+        $('.formu').css('width', '40vw');
+        $('.ancho').css('width', '80%');
+      }
+    }).trigger('resize');
+</script>
+</body>
+</html>
