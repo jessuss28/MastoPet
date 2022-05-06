@@ -66,7 +66,8 @@
     border-color: #aaa;
 }
 .boton:hover{
-background-color: #ccc;
+background-color: rgb(10, 10, 10,.5)!important;
+color: #000;
 }
 .a:hover{
     border-bottom: 2px solid #fff;
@@ -89,12 +90,16 @@ background-color: #ccc;
   </label>
 </div>
 <div style="width: 85%; margin: auto;">
-  <button class="boton mt-4" style="border: 0; width: 100%; border-radius: 45px; padding: 8px 5px; font-weight: 600;">Iniciar Sesión</button>
+  <button class="boton mt-4 text-white border" style="border: 0; width: 100%; border-radius:45px; padding: 8px 5px; font-weight: 600; background: transparent;">Iniciar Sesión</button>
 </div>
 <div class="text-center m-3">
   <span>¿Aún no estás 
 <a href="registro.php" class="text-white a" style="text-decoration: none;">registrado</a>?</span>
 </div>
+<div class="text-center m-3">
+<a href="index.php" class="text-white a" style="text-decoration: none;">Volver</a>
+</div>
+
 </div>
 <script type="text/javascript">
 function mostrarPassword(){
@@ -118,7 +123,7 @@ function mostrarPassword(){
   $(window).on('resize', function () {
 
       if ($(window).width() <= 320) {
-        $('.formu').css('width', '95%');
+        $('.formu').css('width', '90%');
       }
       else if ($(window).width() > 320 && $(window).width() <= 576) {
         $('.formu').css('width', '70vw');
